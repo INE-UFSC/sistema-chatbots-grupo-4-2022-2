@@ -5,29 +5,44 @@ import random as r
 
 class Bot(ABC):
 
-    def __init__(nome,):
-        self.nome = nome
-        self.comandos = {}
+    def __init__(self,nome: str,comandos: dict):
+        self.__nome = nome
+        self.__comandos = comandos
 
-    #nao esquecer o decorator
+    @property
     def nome(self):
-        pass
+        return self.__nome
 
-    #nao esquecer o decorator
-    def nome(nome):
+    @nome.setter
+    def nome(self,nome):
+        self.__nome = nome
+
+    @property
+    def comandos(self):
+        return self.__comandos.copy()
+
+    def apresentacao(self):
         pass
 
     def mostra_comandos(self):
-        pass
+        comandos = ""
+        for i,k in enumerate(self.comandos.keys()):
+            comandos += f"{i} - {k}\n"
+        return comandos
 
-    @abstractmethod
     def executa_comando(self,cmd):
-        pass
+        try:
+            if "Conselho" == cmd:
+                rn = r.randint(0, 3)
+                return f"Eu te respondo: " + self.__comandos[cmd][rn]
+            return f"Eu te respondo: " + self.__comandos[cmd]
+        except ValueError as e:
+            print(e)
 
     @abstractmethod
-    def boas_vindas():
+    def boas_vindas(self):
         pass
     
     @abstractmethod
-    def despedida():
+    def despedida(self):
         pass
