@@ -2,7 +2,7 @@ from Bots.Bot import Bot
 
 class BotTriste(Bot):
     def __init__(self,nome):
-        super().__init__(nome,
+        super().__init__(nome=nome,
                          comandos={"Bom dia": "Oi.",
                                    "Qual é o seu nome?": f"Ah, é {nome}.",
                                    "Conselho": "Nada está tão ruim que não possa piorar.",

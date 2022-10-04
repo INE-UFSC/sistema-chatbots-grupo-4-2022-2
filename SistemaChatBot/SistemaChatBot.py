@@ -21,6 +21,9 @@ class SistemaChatBot:
     
     def escolhe_bot(self):
         escolhe_bot = int(input('Digite o número do chat bot desejado: '))
+        if escolhe_bot == -1:
+            self.__running = False
+            return
         while not (escolhe_bot in range(len(self.__lista_bots))):
             print('Não há esse bot')
             escolhe_bot = int(input('Digite o número do chat bot desejado: '))
