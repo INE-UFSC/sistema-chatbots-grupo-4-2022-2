@@ -5,10 +5,7 @@ class BotFeliz(Bot):
         super().__init__(nome,
                          comandos={"Bom dia": "Que lindo dia para falar com uma pessoa legal!",
                                    "Qual é o seu nome?": f"Meu nome é {nome} e mal te conheci e já te amooo!",
-                                   "Conselho": ["Ajeite a postura.",
-                                                "Ligue para a sua mãe.",
-                                                "Diga saude quando alguem espirrar.",
-                                                "Beba água."],
+                                   "Conselho": "Ajeite a postura.",
                                    "Adeus": "Auf wiedersehen! Até mais ver, sentirei saudades."})
   
     def apresentacao(self):

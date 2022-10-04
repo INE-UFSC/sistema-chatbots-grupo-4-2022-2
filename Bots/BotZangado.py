@@ -5,10 +5,7 @@ class BotZangado(Bot):
         super().__init__(nome,
                          comandos={"Bom dia": "Vai se lascar, você me acordou!",
                                    "Qual é o seu nome?": f"Não sabe ler? {nome}, seu analfabeto.",
-                                   "Conselho": ["Conselho? Me pague.",
-                                                "Digite -1 para ver um comando legal.",
-                                                "Nada vem de graça, nem o pão, nem a cachaça, e nem o conselho.",
-                                                "Beba corote na promoção."],
+                                   "Conselho": "Conselho? Me pague.",
                                    "Adeus": "Já vai tarde."})
 
  

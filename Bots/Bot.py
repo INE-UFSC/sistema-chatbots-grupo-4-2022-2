@@ -1,7 +1,6 @@
 ##implemente as seguintes classes
 
 from abc import ABC, abstractmethod
-import random as r
 
 class Bot(ABC):
 
@@ -30,9 +29,6 @@ class Bot(ABC):
     def executa_comando(self,cmd):
         try:
             print(f"{self.nome} diz: Você disse: {cmd}")
-            if "Conselho" == cmd:
-                rn = r.randint(0, 3)
-                return f"Eu te respondo: " + self.__comandos[cmd][rn]
             return f"Eu te respondo: " + self.__comandos[cmd]
         except ValueError as e:
             print(e)
