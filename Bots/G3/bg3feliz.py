@@ -10,7 +10,6 @@ class BotFeliz(Bot):
             "Que tipo de pessoas você gosta?": "De pessoas algres, auto astral e sorridentes :) :) :) :)",
             "Para quem você ira torcer nessa copa?": "É OBVIO QUE PARA O BRASILLLLLLLLLLLLLLLLLLL",
             "Está feliz?": "É CLAROOOOOOOOOOOOO"
-
             }
         super().__init__(nome, comandos)
 
