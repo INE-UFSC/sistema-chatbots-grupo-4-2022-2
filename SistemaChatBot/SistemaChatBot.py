@@ -18,7 +18,6 @@ class SistemaChatBot:
     def mostra_menu(self):
         for i,b in enumerate(self.__lista_bots):
             print(f"{i} - Bot: {b.nome} - Mensagem de apresentação: {b.apresentacao()}")
-            
     
     def escolhe_bot(self):
         escolhe_bot = int(input('Digite o número do chat bot desejado: '))
@@ -48,7 +47,6 @@ class SistemaChatBot:
         for i,k in enumerate(self.__bot.comandos.keys()):
             if i == comando:
                 cmd = k
-        print(f"{self.__bot.nome} diz: Você disse: {cmd}")
         print(self.__bot.executa_comando(cmd))
         ##faz a entrada de dados do usuário e executa o comando no bot ativo
 

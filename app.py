@@ -7,5 +7,5 @@ from Bots.BotZangado import BotZangado
 ###construa a lista de bots disponíveis aqui
 lista_bots = [BotZangado("AHVG"), BotFeliz("Arnold Schwarzenegger"), BotTriste("Julius Caesar Tertius")]
 
-sys = scb.SistemaChatBot("EMPRESA DO GURPO 4",lista_bots)
+sys = scb.SistemaChatBot("EMPRESA DO GRUPO 4",lista_bots)
 sys.inicio()

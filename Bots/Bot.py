@@ -21,9 +21,6 @@ class Bot(ABC):
     def comandos(self):
         return self.__comandos.copy()
 
-    def apresentacao(self):
-        pass
-
     def mostra_comandos(self):
         comandos = ""
         for i,k in enumerate(self.comandos.keys()):
@@ -32,12 +29,17 @@ class Bot(ABC):
 
     def executa_comando(self,cmd):
         try:
+            print(f"{self.nome} diz: Você disse: {cmd}")
             if "Conselho" == cmd:
                 rn = r.randint(0, 3)
                 return f"Eu te respondo: " + self.__comandos[cmd][rn]
             return f"Eu te respondo: " + self.__comandos[cmd]
         except ValueError as e:
             print(e)
+
+    @abstractmethod
+    def apresentacao(self):
+        pass
 
     @abstractmethod
     def boas_vindas(self):
