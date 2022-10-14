@@ -1,7 +1,7 @@
 ##implemente as seguintes classes
 
 from abc import ABC, abstractmethod
-from Comando import Comando
+from Bots.comando import Comando
 
 class Bot(ABC):
 
@@ -24,7 +24,7 @@ class Bot(ABC):
     def mostra_comandos(self):
         comandos = ""
         for i, c in enumerate(self.comandos):
-            comandos += f"{i} - {c.mensagem}"
+            comandos += f"{i} - {c.mensagem}\n"
         
         return comandos
 
@@ -32,7 +32,7 @@ class Bot(ABC):
     def executa_comando(self, cmd):
         try:
             print(f"{self.nome} diz: Você disse: {cmd}")
-            return f"Eu te respondo: " + self.comandos.get_resposta_random()
+            return f"Eu te respondo: " + self.comandos[cmd].get_resposta_random()
         except ValueError as e:
             print(e)
 

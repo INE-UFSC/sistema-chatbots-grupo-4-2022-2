@@ -35,5 +35,5 @@ class Comando:
 
     def get_resposta_random(self) -> str:
         
-        r = Random.randint(0, len(self.respostas))
-        return self.respostas[r];
+        r = Random().randint(0, len(self.respostas))
+        return self.respostas[r]

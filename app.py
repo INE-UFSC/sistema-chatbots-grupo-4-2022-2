@@ -21,10 +21,14 @@ from Bots.G1.bg1zangado import BotZangado as bg1zangado
 from Bots.G1.bg1inteligente import BotInteligente as bg1inteligente
 
 ###construa a lista de bots disponíveis aqui
-lista_bots = [BotZangado("AHVG"), BotFeliz("Arnold Schwarzenegger"), BotTriste("Julius Caesar Tertius"),
-              bg7feliz("G7Feliz"), bg7triste("G7Triste"), bg7zangado("G7Zangado"),
+lista_bots = [BotZangado("AHVG"), BotFeliz("Arnold Schwarzenegger"), BotTriste("Julius Caesar Tertius")]
+
+
+'''
+bg7feliz("G7Feliz"), bg7triste("G7Triste"), bg7zangado("G7Zangado"),
               bg3feliz("G3Feliz"), bg3triste("G3Triste"), bg3zangado("G3Zangado"),
-              bg1zangado("G1Zangado"), bg1inteligente("G1Inteligente")]
+              bg1zangado("G1Zangado"), bg1inteligente("G1Inteligente")
+'''
 
 sys = scb.SistemaChatBot("EMPRESA DO GRUPO 4",lista_bots)
 sys.inicio()

@@ -1,4 +1,5 @@
 from Bots.Bot import Bot
+from Bots.comando import Comando
 
 class BotZangado(Bot):
     def __init__(self,nome):
@@ -6,7 +7,11 @@ class BotZangado(Bot):
                                    "Qual é o seu nome?": f"Não sabe ler? {nome}, seu analfabeto.",
                                    "Conselho": "Conselho? Me pague.",
                                    "Adeus": "Já vai tarde."}
-        super().__init__(nome=nome, )
+        newcomandos = list()
+        for i, c in enumerate(comandos.keys()):
+            nc = Comando(i, c, comandos[c])
+            newcomandos.append(nc)
+        super().__init__(nome, newcomandos)
 
  
     def apresentacao(self):

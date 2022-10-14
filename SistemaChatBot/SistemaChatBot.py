@@ -46,11 +46,12 @@ class SistemaChatBot:
         while not (comando in list(range(len(self.__bot.comandos)))):
             print('Não há esse comando')
             comando = int(input('Digite o comando desejado (ou -1 para fechar o programa/sair): '))
-        
-        for i,k in enumerate(self.__bot.comandos.keys()):
-            if i == comando:
-                cmd = k
-        print(self.__bot.executa_comando(cmd))
+        '''
+        for i, k in enumerate(self.__bot.comandos):
+            if k.id == comando:
+                cmd = self.__bot.comandos[i].get_resposta_random()
+            '''
+        print(self.__bot.executa_comando(comando))
         ##faz a entrada de dados do usuário e executa o comando no bot ativo
 
     def inicio(self):
