@@ -1,12 +1,17 @@
 from Bots.Bot import Bot
+from Comando import Comando
 
 class BotTriste(Bot):
     def __init__(self,nome):
-        super().__init__(nome=nome,
-                         comandos={"Bom dia": "Oi.",
+        comandos={"Bom dia": "Oi.",
                                    "Qual é o seu nome?": f"Ah, é {nome}.",
                                    "Conselho": "Nada está tão ruim que não possa piorar.",
-                                   "Adeus": "Não se vá..."})
+                                   "Adeus": "Não se vá..."}
+        newcomandos = list()
+        for i, c in enumerate(comandos.keys()):
+            nc = Comando(i, c, comandos[c])
+            newcomandos.append(nc)
+        super().__init__(nome, newcomandos)
 
     def apresentacao(self):
         return f"Me chamo {self.nome}."

@@ -1,10 +1,11 @@
 ##implemente as seguintes classes
 
 from abc import ABC, abstractmethod
+from Comando import Comando
 
 class Bot(ABC):
 
-    def __init__(self,nome: str,comandos: dict):
+    def __init__(self,nome: str, comandos: list[Comando]):
         self.__nome = nome
         self.__comandos = comandos
 
@@ -18,18 +19,20 @@ class Bot(ABC):
 
     @property
     def comandos(self):
-        return self.__comandos.copy()
+        return self.__comandos
 
     def mostra_comandos(self):
         comandos = ""
-        for i,k in enumerate(self.comandos.keys()):
-            comandos += f"{i} - {k}\n"
+        for i, c in enumerate(self.comandos):
+            comandos += f"{i} - {c.mensagem}"
+        
         return comandos
 
-    def executa_comando(self,cmd):
+
+    def executa_comando(self, cmd):
         try:
             print(f"{self.nome} diz: Você disse: {cmd}")
-            return f"Eu te respondo: " + self.__comandos[cmd]
+            return f"Eu te respondo: " + self.comandos.get_resposta_random()
         except ValueError as e:
             print(e)
 
