@@ -2,11 +2,11 @@ from Bots.Bot import Bot
 
 class BotZangado(Bot):
     def __init__(self,nome):
-        super().__init__(nome=nome,
-                         comandos={"Bom dia": "Vai se lascar, você me acordou!",
+        comandos={"Bom dia": "Vai se lascar, você me acordou!",
                                    "Qual é o seu nome?": f"Não sabe ler? {nome}, seu analfabeto.",
                                    "Conselho": "Conselho? Me pague.",
-                                   "Adeus": "Já vai tarde."})
+                                   "Adeus": "Já vai tarde."}
+        super().__init__(nome=nome, )
 
  
     def apresentacao(self):
